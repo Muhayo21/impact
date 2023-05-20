@@ -1,0 +1,30 @@
+
+<html>
+<head>
+
+  <title>My Web Page</title>
+ <script>
+    function sendGetRequest() {
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', 'https://httpbin.org', true);
+      xhr.onload = function() {
+        if (xhr.status === 200) {
+          console.log(xhr.responseText); // You can handle the response here
+        }
+      };
+      xhr.send();
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Web Page</h1>
+  </header>
+<p>this is my website</p>	
+    <button onclick="sendGetRequest()">Send GET Request</button>
+
+  <footer>
+
+  </footer>
+</body>
+</html>
