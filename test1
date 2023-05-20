@@ -4,13 +4,18 @@
 <head>
 
   <title>My Web Page</title>
- <script>
+   <script>
     function sendGetRequest() {
+      var key = 'key'; // 
+      var value = 'value'; // Replace 'value' with the actual value from the GTM data layer
+      
+      var url = 'http://httpbin.org/get?' + encodeURIComponent(key) + '=' + encodeURIComponent(value);
+
       var xhr = new XMLHttpRequest();
-      xhr.open('GET', 'http://httpbin.org/get', true);
+      xhr.open('GET', url, true);
       xhr.onload = function() {
         if (xhr.status === 200) {
-          console.log(xhr.responseText); 
+          console.log(xhr.responseText); // Log the response in the console
         }
       };
       xhr.send();
